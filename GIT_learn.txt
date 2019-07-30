@@ -1,0 +1,38 @@
+Your name:imenist
+email:243260197@qq.com
+本地：
+以readme.txt为例
+修改文件：vi readme.txt
+修改完成：ESC  ->  :wq
+查看文件: cat readme.txt
+提交到暂存区:  git add readme.txt        (未提交的地方叫工作区)
+提交到版本库:  git commit -m "..."       (...为版本的名字）
+查看暂存区状态:  git status
+查看版本号： git log   退出时按: q
+记录每一次版本变更命令: git reflog
+直观查看版本号: git log --pretty=oneline
+版本回退:
+   1)还没有add:   git checkout -- readme.txt
+   2)已经add，还没有commit:  git reset HEAD readme.txt   (返回到工作区，即还未add的时候，可以用checkout回退)
+   3)已经commit:  git reset -- hard HEAD^      (^表示上一次，如果回到10次就HEAD^^^^^^^^^^或者HEAD~10)
+      或者直接回到版本号:  git reset --hard 1111f    (111f表示对应的版本号，不是版本名称，该方法也可以从旧的去到新的，前提是命令窗口未关闭直接滚上去查看版本号或者在reflog里看)
+删除：工作区删除:rm readme.txt       若未被提交到版本库就被删除，则无法恢复
+      在版本区删除:git rm readme.txt    然后再   git commit -m "..."   (...为版本名字）
+      注意:从版本区恢复到本地:git checkout -- readme.txt   (只能恢复版本区最新的)
+此处也可以用版本回退，删除了也不怕（败者食尘）
+
+远程：
+以learngit仓库为例
+github账户:imenist
+
+上传到learngit仓库:
+     1)打开本地要上传仓库的地址，例：cd learngit  (在任意一个地方打开的时候，如果没有init仓库要先init，再把东西add，commit到版本区，才能上传) 
+     2)输入上传仓库的ssh地址，如：git remote add origin git@github.com:imenist/learngit.git（其中git@github.com:imenist/learngit.git这个在GitHub上仓库里看，就是ssh地址）
+     3)上传:git push -u origin master(之后可能会询问是否继续连接，按yes,第一次)
+     4)以后再要从这个已经关联的仓库上传到github时，直接用:git push origin master(要先保存到本地版本库先)
+     5)注意：如果在本地用了败者食尘，要github也如此，需要用：git push origin master --force
+
+从github上克隆gitskill到本地:
+     1）找到该仓库的ssh地址，然后输入:git clone git@github.com:imenist/gitskill.git(clone后面为ssh地址)
+     2)cd gitskill即可查看
+     注意：若没有cd +本地仓库的话，自动保存在 C->users->Administrator 下(或者是打开base的地方)
