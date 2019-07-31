@@ -28,6 +28,7 @@ github账户:imenist
 上传到learngit仓库:
      1)打开本地要上传仓库的地址，例：cd learngit  (在任意一个地方打开的时候，如果没有init仓库要先init，再把东西add，commit到版本区，才能上传) 
      2)输入上传仓库的ssh地址，如：git remote add origin git@github.com:imenist/learngit.git（其中git@github.com:imenist/learngit.git这个在GitHub上仓库里看，就是ssh地址）
+ (仅有一个远程库时可以设置成origin，否则要rm变更城github或gitee)
      3)上传:git push -u origin master(之后可能会询问是否继续连接，按yes,第一次)
      4)以后再要从这个已经关联的仓库上传到github时，直接用:git push origin master(要先保存到本地版本库先)
      5)注意：如果在本地用了败者食尘，要github也如此，需要用：git push origin master --force
@@ -36,3 +37,43 @@ github账户:imenist
      1）找到该仓库的ssh地址，然后输入:git clone git@github.com:imenist/gitskill.git(clone后面为ssh地址)
      2)cd gitskill即可查看
      注意：若没有cd +本地仓库的话，自动保存在 C->users->Administrator 下(或者是打开base的地方)
+
+分支：
+以创建dev为例
+查看分支：git branch (其中#号的表示所在分支）
+创建分支：git branch dev
+切换分支: git checkout dev  (master则为切换到主线）
+创建并切换到该分支: git checkout -b dev
+合并某分支到当前分支（注意是当前）: git merge dev
+删除分支: git branch -d dev
+若在分支上做了其他事情时（如多加一个分支），要删除则要用: git branch -D dev(删除一个仍未合并过的分支)
+
+若分支冲突时（如都新增了一行），合并时要自行处理冲突：用vi打开文件修改，删掉>>>>,=====,<<<<以及自行修改再提交。
+合并分支时，如果未add,commit，无法切换到其他分支
+直观查看分支合并详情: git log --graph --pretty=oneline --abbrev-commit
+普通分支合并(可以看出合并历史):git merge --no--ff -m "..." dev  (...为要版本名称)(这种分支方法在merge后会生成一个commit，可以从历史上查看信息）
+
+分支上扎瓦鲁多，去另一个地方修改bug： git stash  （否则status会显示有东西未commit，这样就不会显示）   （相当于压栈）
+查看栈列表:  git stash list  (可以查看有一个stash@{0},说明可以选择性弹出)
+返回时候时间流转：
+       1)一次性全部弹栈（开始流动）: git stash pop
+       2)选择性弹栈：git stash apply stash@{0}
+
+上传分支: git push origin dev
+克隆到本地后创建dev分支:  git checkout -b dev origin/dev
+上传分支时失败时,先抓下来:git pull
+若pull失败，则要绑定本地分支dev与远程origin/dev分支的链接:
+git branch --set-upstream-to=origin/dev dev    再git pull
+如果有冲突，则要本地修改然后commit再push
+ 
+标签：git tag v1.0  (v1.0为版本号)
+为以前的commit打标签: git tag v0.9 f12332  (v0.9是标签号,f12332是版本号）
+指定名称: git tag -a v1.0 -m "version 0.1" f12332 (v1.0是标签号, version 0.1是名称,f12232是版本号)
+查看标签: git tag 
+看标签信息: git show v1.0
+标签删除:git tag -d v1.0
+推送到远程: git push origin v1.0
+一次性推送未推送到远程的本地标签:git push origin --tags
+删除远程标签:
+     1)先在本地删除:git tag -d v1.0
+     2)推送:git push origin :refs/tags/v1.0
