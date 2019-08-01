@@ -1,0 +1,122 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <malloc.h>
+
+typedef struct node              /*栈的节点*/
+{
+    int num;
+    struct node* pnext;
+}Node,*pNode;
+
+typedef struct stack             /*栈的结构*/
+{
+    pNode top;
+    pNode bottom;
+}Stack,*pStack;
+
+
+void Stackinit(Stack* s);           /*栈的初始化*/
+void Stackpush(Stack* s);           /*进栈*/
+void Stackout(Stack* s);            /*出栈*/
+void Stackclear(Stack* s);          /*清空栈（不是销毁）*/
+void Stackdestroy(Stack* s);        /*销毁栈*/
+void Stackget(Stack* s);            /*获取栈顶元素*/
+void Stacklength(Stack* s);         /*获取栈的长度*/
+
+void main()
+{
+   char ch;
+   int a;
+   Stack s;
+   Stackinit(&s);
+   printf("1-Stackpush\t2-Stackout\n");
+   printf("3-Stackclear\t4-Stackdestroy\n");
+   printf("5-Stackget\t6-Stacklength\n0-exit\n");
+   while(scanf("%d",&a)==1)
+   {
+      switch(a)
+      {
+          case 1:Stackpush(&s);break;
+          case 2:Stackout(&s);break;
+          case 3:Stackclear(&s);break;
+          case 4:Stackdestroy(&s);puts("bye");return;
+          case 5:Stackget(&s);break;
+          case 6:Stacklength(&s);break;
+          case 0:puts("bye");return;
+          default:puts("Input error!");break;
+      }
+      printf("1-Stackpush\t2-Stackout\n");
+      printf("3-Stackclear\t4-Stackdestroy\n");
+      printf("5-Stackget\t6-Stacklength\n0-exit\n");
+   }
+   return;
+}
+
+
+void Stackinit(Stack* s)         /*栈的初始化*/
+{
+   s->top=(pNode)malloc(sizeof(Node));
+   s->bottom=s->top;
+   s->top->pnext=NULL;
+}
+
+void Stackpush(Stack* s)         /*进栈*/
+{
+    int a;
+    puts("Input your number:");
+    while(scanf("%d",&a)==1)
+    {
+      pNode pNew=(pNode)malloc(sizeof(Node));
+      puts("Input your number:");
+      pNew->num=a;
+      pNew->pnext=s->top;
+      s->top=pNew;
+    }
+}
+
+void Stackout(Stack* s)          /*出栈*/
+{
+     pNode pFree=NULL;           /*创建一个不断被清空的节点*/
+     if(s->bottom==s->top)
+        puts("The stack is empty!");
+     else
+     {
+         printf("The number is %d:\n",s->top->num);
+         pFree=s->top;
+         s->top=s->top->pnext;    /*指向上一个节点*/
+         free(pFree);             /*释放节点内存*/
+     }
+}
+
+void Stackclear(Stack* s)         /*清空栈（不是销毁）*/
+{
+    s->top=s->bottom;
+}
+
+void Stackdestroy(Stack* s)      /*销毁栈*/
+{
+    pNode pNew=NULL;
+    while(s->top!=s->bottom)
+    {
+        pNew=s->top;
+        s->top=s->top->pnext;
+        free(pNew);
+    }
+}
+
+void Stackget(Stack* s)            /*获取栈顶元素*/
+{
+    if(s->top==s->bottom)
+        puts("This is a empty stack!");
+    else
+        printf("%d\n",s->top->num);
+}
+
+void Stacklength(Stack* s)        /*获取栈的长度*/
+{
+    unsigned int i;
+    i=(unsigned int)s->top-(unsigned int)s->bottom;
+    printf("%u\n",i);
+}
+

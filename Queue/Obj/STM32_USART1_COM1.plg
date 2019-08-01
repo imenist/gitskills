@@ -1,0 +1,131 @@
+<html>
+<body>
+<pre>
+<h1>µVision3 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\×ÀÃæ\Queue\USART1_COM1.uv2
+Project File Date:  05/09/2011
+
+<h2>Output:</h2>
+Build target 'STM32_USART1_COM1'
+compiling main.c...
+main.c(51): warning:  #520-D: initialization with "{...}" expected for aggregate object
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+linking...
+Program Size: Code=2616 RO-data=336 RW-data=32 ZI-data=32768  
+FromELF: creating hex file...
+".\Obj\STM32_USART1_COM1.axf" - 0 Error(s), 9 Warning(s).
+Load "C:\\Documents and Settings\\Administrator\\×ÀÃæ\\Queue\\Obj\\STM32_USART1_COM1.AXF" 
+
+JLink info:
+-----------
+DLL: V4.08b, compiled Jun 30 2009 19:10:31
+Firmware: J-Link ARM V8 compiled Jun 30 2009 11:00:16
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+---
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+
+Target info:
+------------
+Device: STM32F103VC
+VTarget = 3.242V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+Hardware-Breakpoints: 6
+Software-Breakpoints: 2048
+Watchpoints:          4
+JTAG speed: 2000 kHz
+---
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...
+Build target 'STM32_USART1_COM1'
+compiling main.c...
+main.c(51): warning:  #520-D: initialization with "{...}" expected for aggregate object
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+main.c(84): warning:  #870-D: invalid multibyte character sequence
+linking...
+Program Size: Code=2636 RO-data=336 RW-data=32 ZI-data=32768  
+FromELF: creating hex file...
+".\Obj\STM32_USART1_COM1.axf" - 0 Error(s), 9 Warning(s).
+Load "C:\\Documents and Settings\\Administrator\\×ÀÃæ\\Queue\\Obj\\STM32_USART1_COM1.AXF" 
+
+JLink info:
+-----------
+DLL: V4.08b, compiled Jun 30 2009 19:10:31
+Firmware: J-Link ARM V8 compiled Jun 30 2009 11:00:16
+Hardware: V8.00
+S/N : 805306163 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+---
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+
+Target info:
+------------
+Device: STM32F103VC
+VTarget = 3.235V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+Hardware-Breakpoints: 6
+Software-Breakpoints: 2048
+Watchpoints:          4
+JTAG speed: 2000 kHz
+---
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info:   FPUnit: 6 code (BP) slots and 2 literal slots
+Application running ...

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1550562632 source:c:\users\lenovo\desktop\软件工程18级2班3118005000何隽熙\课程作业\学生考勤信息管理系统\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<stdlib.h>
+

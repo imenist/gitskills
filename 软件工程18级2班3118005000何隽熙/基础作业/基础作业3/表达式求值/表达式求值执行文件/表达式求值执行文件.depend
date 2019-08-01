@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1549724506 source:c:\users\administrator\desktop\软件工程18级2班3118005000何隽熙\基础作业3\表达式求值\表达式求值执行文件\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+

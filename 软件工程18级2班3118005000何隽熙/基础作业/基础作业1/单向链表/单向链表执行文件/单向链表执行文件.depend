@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1549116998 source:c:\users\administrator\desktop\何隽熙3118005000\基础作业1\单向链表\单向链表执行文件\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
